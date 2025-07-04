@@ -36,11 +36,11 @@ This file lists all the indicators of compromise (IOCs) identified during analys
 |-------------------|--------------|-----------------------------------------------|
 | 122[.]10[.]90[.]12 | 2020-09-14   | C2 server used for MgBot & SpyAgent activity  |
 
-![VirusTotal Lookup](screenshots/virustotal_lookup.png)  
-*Enriched C2 IP using VirusTotal — confirmed related Android threat.*<br><br>
-
 ![CyberChef Defang (IP)](screenshots/cyberchef_defang_ip.png)  
 *Used CyberChef to defang IP address for safe documentation.*<br><br>
+
+![VirusTotal Lookup](screenshots/virustotal_lookup.png)  
+*Enriched C2 IP using VirusTotal — confirmed related Android threat.*<br><br>
 
 ---
 
