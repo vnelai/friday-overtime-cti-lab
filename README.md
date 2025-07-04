@@ -1,119 +1,103 @@
-🧪 Friday Overtime – Malware Analysis & CTI Lab
+# 🧪 Friday Overtime – Malware Analysis & CTI Lab
 
-This project simulates a real-world malware investigation scenario, based on a TryHackMe lab. I played the role of a Cyber Threat Intelligence (CTI) analyst responding to an urgent malware incident at a fictional financial company. The lab focused on malware triage, threat attribution, IOC enrichment, and MITRE ATT&CK mapping.
-📝 Lab Summary
+This project simulates a real-world malware investigation scenario based on a TryHackMe lab. I acted as a Cyber Threat Intelligence (CTI) analyst responding to an urgent malware incident at a financial institution. The goal was to analyze the samples, enrich IOCs, attribute the threat, and map behaviors using MITRE ATT&CK.
 
-    Scenario: Simulated CTI analyst responding to SwiftSpend Finance incident
+---
 
-    Malware Type: MgBot (modular RAT)
+## 📝 Lab Summary
 
-    APT Group: Evasive Panda (aka BRONZE HIGHLAND)
+- **Scenario:** Simulated CTI response for SwiftSpend Finance  
+- **Malware Type:** MgBot (modular RAT)  
+- **APT Group:** Evasive Panda (aka BRONZE HIGHLAND)  
+- **Target Platforms:** Windows (with Android linked activity)  
+- **Skills Practiced:** Malware triage, threat attribution, MITRE mapping, IOC enrichment  
 
-    Target Platform: Windows (with linked Android sample)
+---
 
-    Objective: Analyze DLL samples, confirm malware behavior, map to MITRE, enrich IOCs
+## 📂 Files Analyzed
 
-📂 Files Analyzed
+- `pRsm.dll` *(main focus)*  
+- `cbmrpa.dll`  
+- `maillfpassword.dll`  
+- `qmsdp.dll`  
+- `wcdbcrk.dll`  
 
-    pRsm.dll (main focus)
+---
 
-    cbmrpa.dll
+## 🔍 Key Artifact: `pRsm.dll`
 
-    maillfpassword.dll
+- **SHA1 Hash:** `9d1ecbbe8637fed0d89fca1af35ea821277ad2e8`  
+- **Confirmed As:** MgBot audio capture plugin  
+- **Behavior:** Records microphone input  
+- **Mapped MITRE Technique:** `T1123 - Audio Capture`  
 
-    qmsdp.dll
+---
 
-    wcdbcrk.dll
+## 🔗 IOC Enrichment
 
-🔍 Key Artifact: pRsm.dll
+### ✅ Malicious Download URL
 
-    SHA1 Hash: 9d1ecbbe8637fed0d89fca1af35ea821277ad2e8
+- **Original:**  
+  `http://update.browser.qq[.]com/qmbs/QQ/QQUrlMgr_QQ88_4296.exe`  
+- **Defanged (via CyberChef):**  
+  `hxxp[://]update[.]browser[.]qq[.]com/qmbs/QQ/QQUrlMgr_QQ88_4296.exe`
 
-    Confirmed as: MgBot audio capture plugin
+### ✅ Command & Control IP
 
-    Behavior: Records microphone input
+- **IP Address:** `122.10.90[.]12`  
+- **First Seen:** 2020-09-14  
+- **Defanged:** `122[.]10[.]90[.]12`
 
-    Mapped Technique: T1123 - Audio Capture
+### ✅ Android Spyware Sample (Same C2 Infrastructure)
 
-🔗 IOC Enrichment
-✅ MgBot Download URL
+- **SHA1:** `951F41930489A8BFE963FCED5D8DFD79`  
+- **Malware Family:** SpyAgent  
+- **Platform:** Android  
+- **First Seen:** June 2025  
 
-    Original:
-    http://update.browser.qq[.]com/qmbs/QQ/QQUrlMgr_QQ88_4296.exe
+---
 
-    Defanged (CyberChef):
-    hxxp[://]update[.]browser[.]qq[.]com/qmbs/QQ/QQUrlMgr_QQ88_4296.exe
+## 🧠 MITRE ATT&CK Mapping
 
-✅ Command & Control IP
+| Tactic       | Technique ID | Technique Name              | Description                          |
+|--------------|--------------|-----------------------------|--------------------------------------|
+| Collection   | T1123        | Audio Capture               | Microphone spying via plugin         |
+| C2 (likely)  | T1071.001    | App Layer Protocol: Web     | Used for MgBot backdoor communication|
 
-    Original: 122.10.90[.]12
+---
 
-    First Seen: 2020-09-14
+## 🛠️ Tools Used
 
-    Defanged: 122[.]10[.]90[.]12
+- `unzip`, `sha1sum` (Ubuntu shell)  
+- [VirusTotal](https://www.virustotal.com)  
+- [CyberChef](https://gchq.github.io/CyberChef/)  
+- WeLiveSecurity threat report  
+- [MITRE ATT&CK Navigator](https://attack.mitre.org/matrices/enterprise/)
 
-✅ Android Spyware Linked to Same IP
+---
 
-    SHA1 Hash: 951F41930489A8BFE963FCED5D8DFD79
+## 🧩 Screenshots
 
-    Malware Family: SpyAgent
+> _Place your screenshots in a `/screenshots` folder in the repo._
 
-    First Seen: June 2025
+- `screenshots/unzip_sample.png`  
+- `screenshots/sha1sum_result.png`  
+- `screenshots/virustotal_lookup.png`  
+- `screenshots/cyberchef_defang_url.png`
 
-    Platform: Android
+---
 
-🧠 MITRE ATT&CK Mapping
-Tactic	Technique ID	Technique Name	Description
-Collection	T1123	Audio Capture	Records microphone input from host
-Command & Control	T1071.001	Application Layer Protocol: Web	MgBot C2 communication (likely)
-🛠️ Tools Used
+## 🧘 Lessons Learned
 
-    🖥️ Terminal (Ubuntu) – unzip, sha1sum, strings
+- Malware sample handling and hashing  
+- Open-source intelligence (OSINT) lookup techniques  
+- Threat attribution using public APT reports  
+- MITRE ATT&CK behavioral mapping  
+- Infrastructure reuse across platforms (Windows & Android)  
+- Safe reporting practices using CyberChef (defanging)
 
-    🌐 VirusTotal – Hash & IP enrichment
+---
 
-    📊 CyberChef – URL & IP defanging
+## 📎 Blog Post
 
-    📚 WeLiveSecurity Report – Threat attribution
-
-    🧠 MITRE ATT&CK Matrix – Behavior mapping
-
-🧩 Screenshots
-
-(Save your screenshots in a screenshots/ folder and add links like below)
-
-screenshots/unzip_sample.png
-
-screenshots/sha1sum_result.png
-
-screenshots/virustotal_pRsm_result.png
-
-    screenshots/cyberchef_defanged_url.png
-
-📘 Lessons Learned
-
-    How to safely extract and hash malware samples
-
-    Open-source threat attribution using hash intelligence
-
-    Real-world usage of CyberChef, MITRE, and VirusTotal
-
-    MITRE ATT&CK mapping from behavior to technique
-
-    Multi-platform infrastructure reuse by APTs
-
-✅ Status
-
-Lab completed
-
-Malware analyzed and attributed
-
-IOCs enriched and documented
-
-MITRE mapping confirmed
-
-    Blog post written
-
-📎 Blog Post
-
-👉 Read the full write-up: Friday Overtime Blog Post (Insert your link here)
+👉 Full write-up: **[Friday Overtime – Malware Analysis Lab Blog Post](#)**  
