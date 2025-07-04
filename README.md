@@ -117,6 +117,13 @@ This project simulates a real-world malware investigation scenario based on a Tr
 
 ---
 
+## 📄 Supporting Files
+
+- [IOC Notes](ioc_notes.md)  
+- [MITRE Mapping](mitre_mapping.md)
+
+---
+
 ## 📎 Blog Post
 
 👉 Full write-up: **[Friday Overtime – Malware Analysis Lab Blog Post](#)**  
