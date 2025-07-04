@@ -44,6 +44,8 @@ This project simulates a real-world malware investigation scenario based on a Tr
 - **Defanged (via CyberChef):**  
   `hxxp[://]update[.]browser[.]qq[.]com/qmbs/QQ/QQUrlMgr_QQ88_4296.exe`
 
+  <br>
+
 ![MgBot Download URL](screenshots/mgBot_download_url.png)  
 *Located the malicious URL in public reporting.* 
 
