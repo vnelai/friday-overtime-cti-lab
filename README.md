@@ -45,12 +45,14 @@ This project simulates a real-world malware investigation scenario based on a Tr
   `hxxp[://]update[.]browser[.]qq[.]com/qmbs/QQ/QQUrlMgr_QQ88_4296.exe`
 
 ![MgBot Download URL](screenshots/mgBot_download_url.png)  
-*Located the malicious URL in public reporting.*
+*Located the malicious URL in public reporting.* 
 
+<br>
 
 ![CyberChef Defang (URL)](screenshots/cyberchef_defang_url.png)  
 *Used CyberChef to defang the URL for safe sharing.*
 
+<br>
 
 ### ✅ Command & Control IP
 
@@ -62,6 +64,7 @@ This project simulates a real-world malware investigation scenario based on a Tr
 ![VirusTotal Lookup](screenshots/virustotal_lookup.png)  
 *Used VirusTotal to investigate the C2 IP and related samples.*
 
+<br>
 
 ![CyberChef Defang (IP)](screenshots/cyberchef_defang_ip.png)  
 *Defanged the IP address using CyberChef to ensure safe reporting.*
