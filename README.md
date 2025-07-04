@@ -1,6 +1,6 @@
 # 🧪 Friday Overtime – Malware Analysis & CTI Lab
 
-This project simulates a real-world malware investigation scenario based on a TryHackMe lab. I acted as a Cyber Threat Intelligence (CTI) analyst responding to an urgent malware incident at a financial institution. The goal was to analyze the samples, enrich IOCs, attribute the threat, and map behaviors using MITRE ATT&CK.
+This project simulates a real-world malware investigation scenario based on a TryHackMe lab. I acted as a Cyber Threat Intelligence (CTI) analyst responding to an urgent malware incident at a financial institution. The goal was to analyze a suspicious DLL sample, enrich IOCs, attribute the threat, and map behaviors using MITRE ATT&CK.
 
 ---
 
@@ -14,13 +14,12 @@ This project simulates a real-world malware investigation scenario based on a Tr
 
 ---
 
-## 📂 Files Analyzed
+## 📂 File Analyzed
 
-- `pRsm.dll` *(main focus)*  
-- `cbmrpa.dll`  
-- `maillfpassword.dll`  
-- `qmsdp.dll`  
-- `wcdbcrk.dll`  
+- `pRsm.dll` *(main focus of analysis)*  
+
+![Unzip and SHA1 Hash](screenshots/unzip_and_sha1sum.png)  
+*Extracted the DLL sample and generated its SHA1 hash.*
 
 ---
 
@@ -30,6 +29,9 @@ This project simulates a real-world malware investigation scenario based on a Tr
 - **Confirmed As:** MgBot audio capture plugin  
 - **Behavior:** Records microphone input  
 - **Mapped MITRE Technique:** `T1123 - Audio Capture`  
+
+![MgBot Attribution](screenshots/prsm_mgBot_attribution.png)  
+*Attribution of `pRsm.dll` to the MgBot framework based on threat intel.*
 
 ---
 
@@ -42,11 +44,23 @@ This project simulates a real-world malware investigation scenario based on a Tr
 - **Defanged (via CyberChef):**  
   `hxxp[://]update[.]browser[.]qq[.]com/qmbs/QQ/QQUrlMgr_QQ88_4296.exe`
 
+![MgBot Download URL](screenshots/mgBot_download_url.png)  
+*Located the malicious URL in public reporting.*
+
+![CyberChef Defang (URL)](screenshots/cyberchef_defang_url.png)  
+*Used CyberChef to defang the URL for safe sharing.*
+
 ### ✅ Command & Control IP
 
 - **IP Address:** `122.10.90[.]12`  
 - **First Seen:** 2020-09-14  
 - **Defanged:** `122[.]10[.]90[.]12`
+
+![VirusTotal Lookup](screenshots/virustotal_lookup.png)  
+*Used VirusTotal to investigate the C2 IP and related samples.*
+
+![CyberChef Defang (IP)](screenshots/cyberchef_defang_ip.png)  
+*Defanged the IP address using CyberChef to ensure safe reporting.*
 
 ### ✅ Android Spyware Sample (Same C2 Infrastructure)
 
@@ -71,19 +85,8 @@ This project simulates a real-world malware investigation scenario based on a Tr
 - `unzip`, `sha1sum` (Ubuntu shell)  
 - [VirusTotal](https://www.virustotal.com)  
 - [CyberChef](https://gchq.github.io/CyberChef/)  
-- WeLiveSecurity threat report  
+- [WeLiveSecurity APT Report](https://www.welivesecurity.com/)  
 - [MITRE ATT&CK Navigator](https://attack.mitre.org/matrices/enterprise/)
-
----
-
-## 🧩 Screenshots
-
-> _Place your screenshots in a `/screenshots` folder in the repo._
-
-- `screenshots/unzip_sample.png`  
-- `screenshots/sha1sum_result.png`  
-- `screenshots/virustotal_lookup.png`  
-- `screenshots/cyberchef_defang_url.png`
 
 ---
 
@@ -101,3 +104,4 @@ This project simulates a real-world malware investigation scenario based on a Tr
 ## 📎 Blog Post
 
 👉 Full write-up: **[Friday Overtime – Malware Analysis Lab Blog Post](#)**  
+*(Link coming soon)*  
