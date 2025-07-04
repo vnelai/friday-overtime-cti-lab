@@ -22,5 +22,5 @@ This file documents the behavior observed during analysis of the `pRsm.dll` malw
 
 ---
 
-![MITRE Mapping Screenshot](screenshots/mitre_mapping_t1123_t1071.png)  
+![MITRE Mapping Screenshot](screenshots/mitre_mapping_t1123.png)  
 *Mapped malware behaviors using ATT&CK Navigator to visualize adversary tactics and techniques.*<br><br>
