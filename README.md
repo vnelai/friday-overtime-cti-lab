@@ -47,8 +47,10 @@ This project simulates a real-world malware investigation scenario based on a Tr
 ![MgBot Download URL](screenshots/mgBot_download_url.png)  
 *Located the malicious URL in public reporting.*
 
+
 ![CyberChef Defang (URL)](screenshots/cyberchef_defang_url.png)  
 *Used CyberChef to defang the URL for safe sharing.*
+
 
 ### ✅ Command & Control IP
 
@@ -56,11 +58,14 @@ This project simulates a real-world malware investigation scenario based on a Tr
 - **First Seen:** 2020-09-14  
 - **Defanged:** `122[.]10[.]90[.]12`
 
+
 ![VirusTotal Lookup](screenshots/virustotal_lookup.png)  
 *Used VirusTotal to investigate the C2 IP and related samples.*
 
+
 ![CyberChef Defang (IP)](screenshots/cyberchef_defang_ip.png)  
 *Defanged the IP address using CyberChef to ensure safe reporting.*
+
 
 ### ✅ Android Spyware Sample (Same C2 Infrastructure)
 
