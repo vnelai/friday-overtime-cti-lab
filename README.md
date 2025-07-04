@@ -64,11 +64,12 @@ This project simulates a real-world malware investigation scenario based on a Tr
 ![VirusTotal Lookup](screenshots/virustotal_lookup.png)  
 *Used VirusTotal to investigate the C2 IP and related samples.*
 
-<br><br>
+<br>
 
 ![CyberChef Defang (IP)](screenshots/cyberchef_defang_ip.png)  
 *Defanged the IP address using CyberChef to ensure safe reporting.*
 
+<br>
 
 ### ✅ Android Spyware Sample (Same C2 Infrastructure)
 
