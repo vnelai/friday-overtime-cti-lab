@@ -89,6 +89,10 @@ This project simulates a real-world malware investigation scenario based on a Tr
 | Collection   | T1123        | Audio Capture               | Microphone spying via plugin         |
 | C2 (likely)  | T1071.001    | App Layer Protocol: Web     | Used for MgBot backdoor communication|
 
+<br>
+![MITRE Mapping Screenshot](screenshots/mitre_mapping_t1123_t1071.png)  
+*Mapped attacker behaviors to MITRE ATT&CK techniques for detection and reporting.*
+
 ---
 
 ## 🛠️ Tools Used
