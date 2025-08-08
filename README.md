@@ -124,7 +124,6 @@ This project simulates a real-world malware investigation scenario based on a Tr
 
 ---
 
-## 📎 Blog Post
+## 📎 Blog Post  
 
-👉 Full write-up: **[Friday Overtime – Malware Analysis Lab Blog Post](#)**  
-*(Link coming soon)*  
+👉 Full write-up: **[Friday Overtime – Malware Analysis Lab Blog Post](https://www.virginianelai.com/blog/friday-overtime-cti-lab)**  
